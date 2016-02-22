@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+		<PreferenceCategory
+                android:title="Popup">
+                <ListPreference
+                        android:title="Vertical position"
+                        android:summary="Set the vertical location of the popup"
+                        android:key="popup_vertical_gravity"
+                        android:defaultValue="@integer/default_popup_vertical_gravity"
+                        android:entries="@array/vertical_gravities"
+                        android:entryValues="@array/vertical_gravity_values" />
+                <ListPreference
+                        android:title="Horizontal position"
+                        android:summary="Set the horizontal location of the popup"
+                        android:key="popup_horizontal_gravity"
+                        android:defaultValue="@integer/default_popup_horizontal_gravity"
+                        android:entries="@array/horizontal_gravities"
+                        android:entryValues="@array/horizontal_gravity_values" />
+                <CheckBoxPreference
+                		android:title="Show map in popup"
+                		android:summary="Display mini-map of caller's address"
+                		android:key="popup_map"
+                		android:defaultValue="@string/default_popup_map" />
+                <CheckBoxPreference
+                		android:title="Speak CallerID information aloud"
+                		android:summary="Say the name of the incoming caller"
+                		android:key="tts_enabled"
+                		android:defaultValue="true" />
+        </PreferenceCategory>
+		<PreferenceCategory
+                android:title="Lookup source">
+		        <EditTextPreference
+		                android:name="CallerID Lookup URL"
+		                android:summary="{number} is the phone number placeholder, {agentCountry} is the country your phone is registered in"
+		                android:defaultValue="@string/default_lookup_url"
+		                android:title="Set the URL used to perform Caller ID lookups"
+		                android:key="lookup_url" />
+        </PreferenceCategory>
+		<PreferenceCategory
+                android:title="Misc">
+                <CheckBoxPreference
+                		android:title="Prompt for upgrade"
+                		android:summary="Display a prompt when a new version is available"
+                		android:key="promptForNewVersion"
+                		android:defaultValue="true" />
+        </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.integralblue.callerid"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'org.roboguice:roboguice:2.0'
+    compile 'com.squareup.okhttp:okhttp:1.0.2'
+   // compile 'com.google.inject:guice:3.0'
+   // compile 'com.fasterxml.jackson.core:jackson-annotations:2.2.1'
+    //compile 'com.fasterxml.jackson.core:jackson-core:2.2.1'
+   // compile 'com.fasterxml.jackson.core:jackson-databind:2.2.1'
+    compile 'org.slf4j:slf4j-android:1.6.1-RC1'
+    compile 'org.osmdroid:osmdroid-android:3.0.10'
+    compile 'com.googlecode.libphonenumber:geocoder:2.5'
+    compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
+
+}
